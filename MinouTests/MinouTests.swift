@@ -8,29 +8,60 @@
 import XCTest
 @testable import Minou
 
-final class MinouTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class CatAPIManagerTests: XCTestCase {
+
+    var sut: CatAPIManager!
+    var mockNetworkMonitor: NetworkMonitor!
+
+    override func setUp() {
+        super.setUp()
+        mockNetworkMonitor = NetworkMonitor()
+        sut = CatAPIManager(networkMonitor: mockNetworkMonitor)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        sut = nil
+        mockNetworkMonitor = nil
+        super.tearDown()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testFetchBreedsNetworkNotConnected() {
+        // Arrange
+        mockNetworkMonitor.isConnected = false
+
+        // Act
+        sut.fetchBreeds()
+
+        // Assert
+        XCTAssertFalse(sut.breeds.isEmpty)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFetchBreedsNetworkConnected() {
+        // Déclaration de l'attente asynchrone
+        let expectation = self.expectation(description: "Réponse asynchrone attendue")
+
+        // Arrange
+        mockNetworkMonitor.isConnected = true
+
+        // Act
+        sut.fetchBreeds()
+
+        // Assertion asynchrone
+         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+             // Assert
+             XCTAssertFalse(self.sut.breeds.isEmpty, "Breeds ne doit pas être vide après l'appel à la fonction fetchBreeds")
+             XCTAssertFalse(self.sut.isLoading, "isLoading devrait devenir false après l'appel a la fonction fetchBreeds")
+
+             // Valider que l'attente est terminée
+             DispatchQueue.main.async {
+                 expectation.fulfill()
+             }
+         }
+
+         // Attendre que l'attente asynchrone se termine
+         wait(for: [expectation], timeout: 3.0)
     }
+
 
 }

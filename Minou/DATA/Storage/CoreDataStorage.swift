@@ -225,7 +225,7 @@ extension CatsBreed {
         self.wikipediaURL = coreDataObject.wikipediaURL
         self.referenceImageID = coreDataObject.referenceImageID
 
-        // Pour les champs de type Weight
+        
         self.weight = Weight(
             imperial: coreDataObject.weightImperial!,
             metric: coreDataObject.weightMetric!

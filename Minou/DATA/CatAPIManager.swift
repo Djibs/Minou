@@ -14,7 +14,7 @@ import SwiftUI
 final class CatAPIManager: ObservableObject {
 
 
-    @ObservedObject var networkMonitor = NetworkMonitor()
+    @ObservedObject var networkMonitor: NetworkMonitor
 
     let baseURL = "https://api.thecatapi.com/v1"
     let baseURLImage = "https://cdn2.thecatapi.com/images"
@@ -25,7 +25,9 @@ final class CatAPIManager: ObservableObject {
     @Published var breeds: [CatsBreed] = []
     @Published var isLoading = true
 
-    init() {
+    init(networkMonitor: NetworkMonitor = NetworkMonitor()) {
+        self.networkMonitor = networkMonitor
+
         fetchBreeds()
     }
 
@@ -143,7 +145,7 @@ final class CatAPIManager: ObservableObject {
     func downloadAndStoreImage(breedId: String, imageId: String) {
         //Si la fonction est appelée, c'est que l'image n'est pas en cache dans coredata
 
-        // Vérifier la connexion réseau 
+        // Vérifier la connexion réseau
         guard networkMonitor.isConnected else { return}
 
         let imageUrl = getUrlImage(id: imageId)

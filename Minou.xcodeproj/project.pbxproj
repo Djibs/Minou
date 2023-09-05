@@ -160,7 +160,6 @@
 			children = (
 				49C8E9302AA7E7AF007A42E9 /* SplashScreenView.swift */,
 				49C8E8E92AA7A0A1007A42E9 /* ListView.swift */,
-				49C8E92C2AA7DE51007A42E9 /* HeaderView.swift */,
 				49C8E92A2AA7DA9F007A42E9 /* BreedDetailView.swift */,
 				49C8E9292AA7D848007A42E9 /* Components */,
 				49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */,
@@ -200,6 +199,7 @@
 		49C8E9292AA7D848007A42E9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				49C8E92C2AA7DE51007A42E9 /* HeaderView.swift */,
 				49C8E9232AA7D109007A42E9 /* SearchBarView.swift */,
 				49C8E92E2AA7E484007A42E9 /* RatingView.swift */,
 				49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */,
