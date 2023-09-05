@@ -8,14 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */; };
-		49C8E8EA2AA7A0A1007A42E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E92AA7A0A1007A42E9 /* ContentView.swift */; };
+		49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E92AA7A0A1007A42E9 /* ListView.swift */; };
 		49C8E8EC2AA7A0A2007A42E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */; };
 		49C8E8EF2AA7A0A2007A42E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C8E8EE2AA7A0A2007A42E9 /* Preview Assets.xcassets */; };
-		49C8E8F12AA7A0A2007A42E9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8F02AA7A0A2007A42E9 /* Persistence.swift */; };
+		49C8E8F12AA7A0A2007A42E9 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8F02AA7A0A2007A42E9 /* CoreDataStorage.swift */; };
 		49C8E8F42AA7A0A2007A42E9 /* Minou.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8F22AA7A0A2007A42E9 /* Minou.xcdatamodeld */; };
 		49C8E8FE2AA7A0A2007A42E9 /* MinouTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8FD2AA7A0A2007A42E9 /* MinouTests.swift */; };
 		49C8E9082AA7A0A2007A42E9 /* MinouUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9072AA7A0A2007A42E9 /* MinouUITests.swift */; };
 		49C8E90A2AA7A0A2007A42E9 /* MinouUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9092AA7A0A2007A42E9 /* MinouUITestsLaunchTests.swift */; };
+		49C8E91A2AA7A13F007A42E9 /* CatAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9192AA7A13F007A42E9 /* CatAPIManager.swift */; };
+		49C8E91C2AA7A153007A42E9 /* CatsBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E91B2AA7A153007A42E9 /* CatsBreed.swift */; };
+		49C8E9202AA7B442007A42E9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E91F2AA7B442007A42E9 /* Logger.swift */; };
+		49C8E9222AA7C56D007A42E9 /* BreedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */; };
+		49C8E9242AA7D109007A42E9 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9232AA7D109007A42E9 /* SearchBarView.swift */; };
+		49C8E9262AA7D163007A42E9 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9252AA7D163007A42E9 /* BlurView.swift */; };
+		49C8E9282AA7D26A007A42E9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */; };
+		49C8E92B2AA7DA9F007A42E9 /* BreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E92A2AA7DA9F007A42E9 /* BreedDetailView.swift */; };
+		49C8E92D2AA7DE51007A42E9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E92C2AA7DE51007A42E9 /* HeaderView.swift */; };
+		49C8E92F2AA7E484007A42E9 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E92E2AA7E484007A42E9 /* RatingView.swift */; };
+		49C8E9312AA7E7AF007A42E9 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9302AA7E7AF007A42E9 /* SplashScreenView.swift */; };
+		49C8E9332AA7ECD1007A42E9 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E9322AA7ECD1007A42E9 /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,16 +50,28 @@
 /* Begin PBXFileReference section */
 		49C8E8E42AA7A0A1007A42E9 /* Minou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouApp.swift; sourceTree = "<group>"; };
-		49C8E8E92AA7A0A1007A42E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		49C8E8E92AA7A0A1007A42E9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49C8E8EE2AA7A0A2007A42E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		49C8E8F02AA7A0A2007A42E9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		49C8E8F02AA7A0A2007A42E9 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		49C8E8F32AA7A0A2007A42E9 /* Minou.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Minou.xcdatamodel; sourceTree = "<group>"; };
 		49C8E8F92AA7A0A2007A42E9 /* MinouTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinouTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E8FD2AA7A0A2007A42E9 /* MinouTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouTests.swift; sourceTree = "<group>"; };
 		49C8E9032AA7A0A2007A42E9 /* MinouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E9072AA7A0A2007A42E9 /* MinouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouUITests.swift; sourceTree = "<group>"; };
 		49C8E9092AA7A0A2007A42E9 /* MinouUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		49C8E9192AA7A13F007A42E9 /* CatAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIManager.swift; sourceTree = "<group>"; };
+		49C8E91B2AA7A153007A42E9 /* CatsBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsBreed.swift; sourceTree = "<group>"; };
+		49C8E91F2AA7B442007A42E9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageView.swift; sourceTree = "<group>"; };
+		49C8E9232AA7D109007A42E9 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		49C8E9252AA7D163007A42E9 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		49C8E92A2AA7DA9F007A42E9 /* BreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailView.swift; sourceTree = "<group>"; };
+		49C8E92C2AA7DE51007A42E9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		49C8E92E2AA7E484007A42E9 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		49C8E9302AA7E7AF007A42E9 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		49C8E9322AA7ECD1007A42E9 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */,
-				49C8E8E92AA7A0A1007A42E9 /* ContentView.swift */,
-				49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */,
-				49C8E8F02AA7A0A2007A42E9 /* Persistence.swift */,
-				49C8E8F22AA7A0A2007A42E9 /* Minou.xcdatamodeld */,
+				49C8E9172AA7A0E9007A42E9 /* DATA */,
+				49C8E9162AA7A0C5007A42E9 /* UI */,
 				49C8E8ED2AA7A0A2007A42E9 /* Preview Content */,
 			);
 			path = Minou;
@@ -131,6 +153,60 @@
 				49C8E9092AA7A0A2007A42E9 /* MinouUITestsLaunchTests.swift */,
 			);
 			path = MinouUITests;
+			sourceTree = "<group>";
+		};
+		49C8E9162AA7A0C5007A42E9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49C8E9302AA7E7AF007A42E9 /* SplashScreenView.swift */,
+				49C8E8E92AA7A0A1007A42E9 /* ListView.swift */,
+				49C8E92C2AA7DE51007A42E9 /* HeaderView.swift */,
+				49C8E92A2AA7DA9F007A42E9 /* BreedDetailView.swift */,
+				49C8E9292AA7D848007A42E9 /* Components */,
+				49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		49C8E9172AA7A0E9007A42E9 /* DATA */ = {
+			isa = PBXGroup;
+			children = (
+				49C8E9192AA7A13F007A42E9 /* CatAPIManager.swift */,
+				49C8E91B2AA7A153007A42E9 /* CatsBreed.swift */,
+				49C8E9322AA7ECD1007A42E9 /* NetworkMonitor.swift */,
+				49C8E9182AA7A0F3007A42E9 /* Storage */,
+				49C8E91E2AA7B3EB007A42E9 /* Extensions */,
+			);
+			path = DATA;
+			sourceTree = "<group>";
+		};
+		49C8E9182AA7A0F3007A42E9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				49C8E8F02AA7A0A2007A42E9 /* CoreDataStorage.swift */,
+				49C8E8F22AA7A0A2007A42E9 /* Minou.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		49C8E91E2AA7B3EB007A42E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49C8E91F2AA7B442007A42E9 /* Logger.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49C8E9292AA7D848007A42E9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				49C8E9232AA7D109007A42E9 /* SearchBarView.swift */,
+				49C8E92E2AA7E484007A42E9 /* RatingView.swift */,
+				49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */,
+				49C8E9252AA7D163007A42E9 /* BlurView.swift */,
+				49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +339,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C8E8F12AA7A0A2007A42E9 /* Persistence.swift in Sources */,
-				49C8E8EA2AA7A0A1007A42E9 /* ContentView.swift in Sources */,
+				49C8E8F12AA7A0A2007A42E9 /* CoreDataStorage.swift in Sources */,
+				49C8E9332AA7ECD1007A42E9 /* NetworkMonitor.swift in Sources */,
+				49C8E9242AA7D109007A42E9 /* SearchBarView.swift in Sources */,
+				49C8E9312AA7E7AF007A42E9 /* SplashScreenView.swift in Sources */,
+				49C8E9282AA7D26A007A42E9 /* BackgroundView.swift in Sources */,
+				49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */,
+				49C8E92B2AA7DA9F007A42E9 /* BreedDetailView.swift in Sources */,
+				49C8E91A2AA7A13F007A42E9 /* CatAPIManager.swift in Sources */,
+				49C8E91C2AA7A153007A42E9 /* CatsBreed.swift in Sources */,
+				49C8E9202AA7B442007A42E9 /* Logger.swift in Sources */,
 				49C8E8F42AA7A0A2007A42E9 /* Minou.xcdatamodeld in Sources */,
+				49C8E9262AA7D163007A42E9 /* BlurView.swift in Sources */,
 				49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */,
+				49C8E9222AA7C56D007A42E9 /* BreedImageView.swift in Sources */,
+				49C8E92D2AA7DE51007A42E9 /* HeaderView.swift in Sources */,
+				49C8E92F2AA7E484007A42E9 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -428,6 +516,7 @@
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Miaou;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -457,6 +546,7 @@
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Miaou;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDbreeds" representedClassName="CDbreeds" syncable="YES" codeGenerationType="class">
+        <attribute name="adaptability" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="affectionLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="altNames" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="bidability" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="catFriendly" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cfaURL" optional="YES" attributeType="String"/>
+        <attribute name="childFriendly" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="countryCode" attributeType="String"/>
+        <attribute name="countryCodes" attributeType="String"/>
+        <attribute name="descriptionBreed" attributeType="String"/>
+        <attribute name="dogFriendly" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="energyLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="experimental" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="grooming" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hairless" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="healthIssues" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="hypoallergenic" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="indoor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="intelligence" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lap" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lifeSpan" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="natural" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="origin" attributeType="String"/>
+        <attribute name="rare" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="referenceImageID" optional="YES" attributeType="String"/>
+        <attribute name="rex" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sheddingLevel" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortLegs" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="socialNeeds" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="strangerFriendly" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="suppressedTail" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temperament" attributeType="String"/>
+        <attribute name="vcahospitalsURL" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="vetstreetURL" optional="YES" attributeType="String" defaultValueString="-"/>
+        <attribute name="vocalisation" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weightImperial" attributeType="String"/>
+        <attribute name="weightMetric" attributeType="String"/>
+        <attribute name="wikipediaURL" optional="YES" attributeType="String" defaultValueString="https://fr.wikipedia.org/"/>
+    </entity>
+</model>
