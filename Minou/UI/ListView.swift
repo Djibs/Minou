@@ -44,13 +44,14 @@ struct ListView: View {
                                             .font(.title3)
 
                                         Spacer()
+
                                     }
                                 }
 
                             }
 
                         }
-                        .padding(.horizontal, 15)
+                        .padding(.horizontal, 10)
                         .frame(height: 80)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .listRowSeparator(.hidden)
@@ -74,5 +75,6 @@ struct ListView: View {
         .accentColor(.white)
 
     }
+
 
 }

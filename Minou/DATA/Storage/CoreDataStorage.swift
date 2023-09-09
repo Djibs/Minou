@@ -127,6 +127,32 @@ class CoreDataStorage {
     }
 
 
+    func saveImagesIDs(_ imagesIds: String, breed: CatsBreed) {
+        if let existingBreed = fetchCDbreeds(withId: breed.id) {
+            updateCDbreedsProperties(cdbreeds: existingBreed, breed: breed)
+            existingBreed.imagesIds = imagesIds
+
+        }
+    }
+
+    func fetchImagesIds(breedId: String)-> String? {
+        let fetchRequest: NSFetchRequest<CDbreeds> = CDbreeds.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "breedId == %@", breedId)
+
+        do {
+            if let result = try context.fetch(fetchRequest).first {
+                return result.imagesIds
+            } else {
+                Logger.coreData.error("Aucune donnée correspondante pour breedId \(breedId)")
+                return nil
+            }
+        } catch {
+            Logger.coreData.error("Erreur récuperations données Coredata pour breedId \(breedId) : \(error)")
+            return nil
+        }
+    }
+
+
     private func fetchCDbreeds(withId breedId: String) -> CDbreeds? {
 
         let fetchRequest: NSFetchRequest<CDbreeds> = CDbreeds.fetchRequest()
@@ -227,5 +253,7 @@ extension CatsBreed {
         // Initialisation des Int?
         self.lap = Int(coreDataObject.lap)
 
+
+        self.imagesIds = coreDataObject.imagesIds
     }
 }

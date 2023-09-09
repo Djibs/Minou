@@ -20,6 +20,12 @@ final class CatAPIManager: ObservableObject {
 
     @Published var breeds: [CatsBreed] = []
     @Published var isLoading = true
+    @Published var imagesiDs: [String] = [] {
+
+        willSet {
+            print(imagesiDs)
+        }
+    }
 
     init(networkMonitor: NetworkMonitor) {
         self.networkMonitor = networkMonitor
@@ -32,7 +38,7 @@ final class CatAPIManager: ObservableObject {
 
         // Vérifier la connexion réseau
         guard networkMonitor.isConnected else {
-            // Récupérer les données depuis Coredat si pas de connexion
+            // Récupérer les données depuis Coredata si pas de connexion
             self.breeds = self.storage.fetchBreedsList().sorted()
             return
         }
@@ -53,7 +59,6 @@ final class CatAPIManager: ObservableObject {
                 }
                 return
             }
-
 
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode >= 200 && httpResponse.statusCode < 300,
@@ -132,6 +137,79 @@ final class CatAPIManager: ObservableObject {
 
         }
     }
+    func fetchImagesIDs(breed: CatsBreed, completion: @escaping ([String]?) -> Void) {
+
+
+        guard networkMonitor.isConnected else {
+            // Récupérer les données depuis Coredata si pas de connexion
+            completion(getImagesIds(breedId: breed.id))
+            return
+        }
+
+        guard let url = URL(string: "\(baseURL)/images/search?breed_id=\(breed.id)&limit=10") else {
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard error == nil else {
+                Logger.catAPIManager.error("Erreur réseau: \(error!.localizedDescription)")
+                completion(nil)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode >= 200 && httpResponse.statusCode < 300,
+                  let imagesListJsonData = data else {
+                Logger.catAPIManager.error("Problème de réponse serveur pour la recherche d'imagesou pas de données")
+                completion(nil)
+                return
+            }
+
+            do {
+                let catImages = try JSONDecoder().decode([SearchImages].self, from: imagesListJsonData)
+                var fetchedIDs = catImages.map { $0.id }
+                let joinedIDs = fetchedIDs.joined(separator: ",") // on crée un seul string qui sépare les ids par une virgule
+
+                // on stocke dans coredata...
+                self.storage.saveImagesIDs(joinedIDs, breed: breed)
+                completion(fetchedIDs)
+            } catch let DecodingError.dataCorrupted(context) {
+                Logger.catAPIManager.error("\(context.debugDescription)")
+                completion(nil)
+
+            } catch let DecodingError.keyNotFound(key, context) {
+                Logger.catAPIManager.error("Key '\(key.stringValue)' not found: \(context.debugDescription)")
+                Logger.catAPIManager.error("codingPath: \(context.codingPath)")
+                completion(nil)
+
+            } catch let DecodingError.valueNotFound(value, context) {
+                Logger.catAPIManager.error("Value '\(value)' not found: \(context.debugDescription)")
+                Logger.catAPIManager.error("codingPath: \(context.codingPath)")
+                completion(nil)
+
+            } catch let DecodingError.typeMismatch(type, context) {
+                Logger.catAPIManager.error("Type '\(type)' mismatch: \(context.debugDescription)")
+                Logger.catAPIManager.error("codingPath: \(context.codingPath)")
+                completion(nil)
+
+            } catch {
+                Logger.catAPIManager.error("error: \(error)")
+                completion(nil)
+            }
+
+        }.resume()
+    }
+
+    func getImagesIds(breedId: String) -> [String]? {
+        if let imagesIdsString = self.storage.fetchImagesIds(breedId: breedId),
+           !imagesIdsString.isEmpty {
+            let imagesIdsArray = imagesIdsString.split(separator: ",").map(String.init)
+            return imagesIdsArray.isEmpty ? nil : imagesIdsArray
+        }
+        return nil
+    }
+
+
     func getStringUrlImage(id: String) -> String{
         return baseURLImage + "/" + id + ".jpg"
     }

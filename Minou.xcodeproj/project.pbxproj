@@ -10,6 +10,7 @@
 		496812C32AACA03A00A2C583 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 496812C22AACA03A00A2C583 /* README.md */; };
 		496812C52AACAA1200A2C583 /* LinksBreedsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */; };
 		496812C72AACAE1100A2C583 /* CacheImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C62AACAE1100A2C583 /* CacheImages.swift */; };
+		496812C92AAD1FB700A2C583 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C82AAD1FB700A2C583 /* GridView.swift */; };
 		49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */; };
 		49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E92AA7A0A1007A42E9 /* ListView.swift */; };
 		49C8E8EC2AA7A0A2007A42E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		496812C22AACA03A00A2C583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksBreedsDetailView.swift; sourceTree = "<group>"; };
 		496812C62AACAE1100A2C583 /* CacheImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImages.swift; sourceTree = "<group>"; };
+		496812C82AAD1FB700A2C583 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		49C8E8E42AA7A0A1007A42E9 /* Minou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouApp.swift; sourceTree = "<group>"; };
 		49C8E8E92AA7A0A1007A42E9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				49C8E9252AA7D163007A42E9 /* BlurView.swift */,
 				49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */,
 				496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */,
+				496812C82AAD1FB700A2C583 /* GridView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496812C92AAD1FB700A2C583 /* GridView.swift in Sources */,
 				49C8E8F12AA7A0A2007A42E9 /* CoreDataStorage.swift in Sources */,
 				49C8E9332AA7ECD1007A42E9 /* NetworkMonitor.swift in Sources */,
 				49C8E9242AA7D109007A42E9 /* SearchBarView.swift in Sources */,
@@ -523,7 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Minou/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;
@@ -556,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Minou/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;

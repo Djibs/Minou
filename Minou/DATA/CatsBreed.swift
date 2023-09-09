@@ -29,6 +29,7 @@ struct CatsBreed: Identifiable, Codable, Comparable {
     let hypoallergenic: Int
     let referenceImageID: String?
     let catFriendly, bidability: Int?
+    let imagesIds: String?
 
     enum CodingKeys: String, CodingKey {
         case weight, id, name
@@ -61,6 +62,7 @@ struct CatsBreed: Identifiable, Codable, Comparable {
         case referenceImageID = "reference_image_id"
         case catFriendly = "cat_friendly"
         case bidability
+        case imagesIds
     }
 
     public static func < (lhs: CatsBreed, rhs: CatsBreed) -> Bool {
@@ -75,4 +77,11 @@ struct CatsBreed: Identifiable, Codable, Comparable {
 // MARK: - Weight
 struct Weight: Codable {
     let imperial, metric: String
+}
+
+
+
+// MARK: - SearchImages
+struct SearchImages: Codable {
+    let id: String
 }

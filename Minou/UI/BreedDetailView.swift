@@ -11,7 +11,10 @@ struct BreedDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var cacheImages: CacheImages
-    
+    @EnvironmentObject var catAPIManager: CatAPIManager
+
+    @State private var imageIds: [String] = []
+
     let breed: CatsBreed
     
     var cachedImage: UIImage? {
@@ -45,7 +48,7 @@ struct BreedDetailView: View {
                                 .background(Color.gray)
                                 .edgesIgnoringSafeArea([.top])
                         }
-                        
+
                         LinksBreedsDetailView(breed: breed)
 
                         VStack{
@@ -82,33 +85,44 @@ struct BreedDetailView: View {
                             Text("Poids moyen : \(breed.weight.metric) kg")
                                 .font(.subheadline)
                             
-                            
-                            
-                            
                             Text("Description")
                                 .font(.headline)
                             
                             Text(breed.description)
                                 .font(.body)
                                 .padding(.bottom)
-                            
-                            Group {
-                                RatingView(title: "Adaptabilité", rating: breed.adaptability)
-                                RatingView(title: "Niveau d'affection", rating: breed.affectionLevel)
-                                RatingView(title: "Convivialité envers les enfants", rating: breed.childFriendly)
-                                RatingView(title: "Convivialité envers les chiens", rating: breed.dogFriendly)
-                                RatingView(title: "Niveau d'énergie", rating: breed.energyLevel)
+
+                            HStack {
+                                Text("Note moyenne: ")
+                                Spacer()
+                                calculateAverageRating(for: breed)
                             }
-                            
+                            .font(.title2)
+                            .fontWeight(.bold)
+
+
                             Group {
-                                RatingView(title: "Toilettage", rating: breed.grooming)
-                                RatingView(title: "Problèmes de santé", rating: breed.healthIssues)
-                                RatingView(title: "Intelligence", rating: breed.intelligence)
-                                RatingView(title: "Niveau de perte de poils", rating: breed.sheddingLevel)
-                                RatingView(title: "Besoins sociaux", rating: breed.socialNeeds)
+                                RatingView(title: "Adaptabilité", rating: Double(breed.adaptability))
+                                RatingView(title: "Niveau d'affection", rating: Double(breed.affectionLevel))
+                                RatingView(title: "Convivialité envers les enfants", rating: Double(breed.childFriendly))
+                                RatingView(title: "Convivialité envers les chiens", rating: Double(breed.dogFriendly))
+                                RatingView(title: "Niveau d'énergie", rating: Double(breed.energyLevel))
+
+                                RatingView(title: "Toilettage", rating: Double(breed.grooming))
+                                RatingView(title: "Problèmes de santé", rating: Double(breed.healthIssues))
+                                RatingView(title: "Intelligence", rating: Double(breed.intelligence))
+                                RatingView(title: "Niveau de perte de poils", rating: Double(breed.sheddingLevel))
+                                RatingView(title: "Besoins sociaux", rating: Double(breed.socialNeeds))
+
+
                             }
-                            
-                            
+                            Group{
+                                if !imageIds.isEmpty {
+                                    ScrollImagesView(imagesIds: imageIds)
+                                }
+                            }
+                            .padding(.vertical)
+
                         }
                         .padding(.horizontal)
                         
@@ -119,5 +133,41 @@ struct BreedDetailView: View {
                 
             }
         }
+        .onAppear{
+            if breed.imagesIds == nil {
+                catAPIManager.fetchImagesIDs(breed: breed) { fetchedIDs in
+                    if let ids = fetchedIDs {
+                        self.imageIds = ids
+                    }
+                }
+            }
+
+        }
     }
+
+    func calculateAverageRating(for breed: CatsBreed) -> some View {
+        let ratings = [
+            breed.adaptability,
+            breed.affectionLevel,
+            breed.childFriendly,
+            breed.dogFriendly,
+            breed.energyLevel,
+            breed.grooming,
+            breed.healthIssues,
+            breed.intelligence,
+            breed.sheddingLevel,
+            breed.socialNeeds
+        ]
+
+        guard !ratings.isEmpty else {
+            return RatingView(title: "", rating: nil)
+        }
+
+        let sum = ratings.reduce(0, +)
+        let average = Double(sum) / Double(ratings.count)
+        let roundedAverage = (average * 2).rounded() / 2 // Arrondis à la valeur .0 ou .5 la plus proche
+
+        return RatingView(title: "", rating: roundedAverage)
+    }
+
 }
