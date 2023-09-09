@@ -22,9 +22,6 @@ struct HeaderView: View {
                     .foregroundColor(.white)
                     .frame(width: 100, height: 50)
                 Spacer()
-
-
-
             }
             .padding([.horizontal, .bottom])
 

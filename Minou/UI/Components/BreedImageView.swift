@@ -9,17 +9,32 @@ import SwiftUI
 
 struct BreedImageView: View {
     @EnvironmentObject var catAPIManager: CatAPIManager
-
+    @EnvironmentObject var cacheImages: CacheImages
 
     let breedId: String
     let imageId: String?
-    let imageData: Data?
+
+    var cachedImage: UIImage? {
+        if let imageId = imageId,
+           let pathCacheImage = cacheImages.imageUrlIfExists(name: imageId),
+           let uiImage = UIImage(contentsOfFile: pathCacheImage.path) {
+            return uiImage
+        }
+        return nil
+    }
+
+    var placeholderImage: some View {
+        Image(systemName: "photo")
+            .frame(width: 25, height: 25)
+            .foregroundColor(.white)
+    }
 
     var body: some View {
 
         Group {
-            if let imageData = imageData, let uiImage = UIImage(data: imageData) {
-                        Image(uiImage: uiImage).resizable()
+            if let cached = cachedImage {
+                Image(uiImage: cached)
+                    .resizable()
             } else {
                 if let imageId = imageId {
                     AsyncImage(url: catAPIManager.getUrlImage(id: imageId)) { phase in
@@ -27,16 +42,13 @@ struct BreedImageView: View {
                         case .success(let image):
                             image.resizable()
                         case .failure, .empty:
-                            Image(systemName: "photo")
-                                .resizable()
+                            placeholderImage
                         @unknown default:
-                            Image(systemName: "photo")
-                                .resizable()
+                            placeholderImage
                         }
                     }
                 } else {
-                    Image(systemName: "photo")
-                        .resizable()
+                    placeholderImage
                 }
             }
         }
@@ -45,9 +57,10 @@ struct BreedImageView: View {
         .overlay(Circle().stroke(Color.white, lineWidth: 1))
         .shadow(radius: 2)
         .onAppear {
-            if imageData == nil && imageId != nil {
-                // Télécharger l'image et mettre à jour imageData dans CoreData
-                catAPIManager.downloadAndStoreImage(breedId: breedId, imageId: imageId!)
+            if let imageId = imageId,
+               cacheImages.imageUrlIfExists(name: imageId) == nil  {
+                // Télécharger l'image et mettre dans le cache
+                cacheImages.downloadAndStoreImage(urlString: catAPIManager.getStringUrlImage(id: imageId), name: imageId)
             }
         }
     }

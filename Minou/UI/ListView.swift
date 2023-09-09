@@ -37,7 +37,7 @@ struct ListView: View {
                                     selectedBreed = breed
                                 }) {
                                     HStack{
-                                        BreedImageView(breedId: breed.id, imageId: breed.referenceImageID, imageData: breed.imageData)
+                                        BreedImageView(breedId: breed.id, imageId: breed.referenceImageID)
 
                                         Text(breed.name)
                                             .foregroundColor(.white)

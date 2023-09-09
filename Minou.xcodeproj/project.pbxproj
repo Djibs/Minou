@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496812C32AACA03A00A2C583 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 496812C22AACA03A00A2C583 /* README.md */; };
+		496812C52AACAA1200A2C583 /* LinksBreedsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */; };
+		496812C72AACAE1100A2C583 /* CacheImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C62AACAE1100A2C583 /* CacheImages.swift */; };
 		49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */; };
 		49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E92AA7A0A1007A42E9 /* ListView.swift */; };
 		49C8E8EC2AA7A0A2007A42E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496812C22AACA03A00A2C583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksBreedsDetailView.swift; sourceTree = "<group>"; };
+		496812C62AACAE1100A2C583 /* CacheImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImages.swift; sourceTree = "<group>"; };
 		49C8E8E42AA7A0A1007A42E9 /* Minou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouApp.swift; sourceTree = "<group>"; };
 		49C8E8E92AA7A0A1007A42E9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		49C8E8DB2AA7A0A1007A42E9 = {
 			isa = PBXGroup;
 			children = (
+				496812C22AACA03A00A2C583 /* README.md */,
 				49C8E8E62AA7A0A1007A42E9 /* Minou */,
 				49C8E8FC2AA7A0A2007A42E9 /* MinouTests */,
 				49C8E9062AA7A0A2007A42E9 /* MinouUITests */,
@@ -173,6 +180,7 @@
 				49C8E9192AA7A13F007A42E9 /* CatAPIManager.swift */,
 				49C8E91B2AA7A153007A42E9 /* CatsBreed.swift */,
 				49C8E9322AA7ECD1007A42E9 /* NetworkMonitor.swift */,
+				496812C62AACAE1100A2C583 /* CacheImages.swift */,
 				49C8E9182AA7A0F3007A42E9 /* Storage */,
 				49C8E91E2AA7B3EB007A42E9 /* Extensions */,
 			);
@@ -205,6 +213,7 @@
 				49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */,
 				49C8E9252AA7D163007A42E9 /* BlurView.swift */,
 				49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */,
+				496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496812C32AACA03A00A2C583 /* README.md in Resources */,
 				49C8E8EF2AA7A0A2007A42E9 /* Preview Assets.xcassets in Resources */,
 				49C8E8EC2AA7A0A2007A42E9 /* Assets.xcassets in Resources */,
 			);
@@ -345,6 +355,7 @@
 				49C8E9312AA7E7AF007A42E9 /* SplashScreenView.swift in Sources */,
 				49C8E9282AA7D26A007A42E9 /* BackgroundView.swift in Sources */,
 				49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */,
+				496812C72AACAE1100A2C583 /* CacheImages.swift in Sources */,
 				49C8E92B2AA7DA9F007A42E9 /* BreedDetailView.swift in Sources */,
 				49C8E91A2AA7A13F007A42E9 /* CatAPIManager.swift in Sources */,
 				49C8E91C2AA7A153007A42E9 /* CatsBreed.swift in Sources */,
@@ -354,6 +365,7 @@
 				49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */,
 				49C8E9222AA7C56D007A42E9 /* BreedImageView.swift in Sources */,
 				49C8E92D2AA7DE51007A42E9 /* HeaderView.swift in Sources */,
+				496812C52AACAA1200A2C583 /* LinksBreedsDetailView.swift in Sources */,
 				49C8E92F2AA7E484007A42E9 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Minou/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;
@@ -520,8 +532,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,9 +541,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.i2cmedia.Minou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,7 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Minou/Preview Content\"";
 				DEVELOPMENT_TEAM = 5NTH83594V;
 				ENABLE_PREVIEWS = YES;
@@ -550,8 +565,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,9 +574,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.i2cmedia.Minou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

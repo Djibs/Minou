@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct BreedDetailView: View {
-
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
+    @EnvironmentObject var cacheImages: CacheImages
+    
     let breed: CatsBreed
-
+    
+    var cachedImage: UIImage? {
+        
+        if let imageId = breed.referenceImageID, let pathCacheImage = cacheImages.imageUrlIfExists(name: imageId),
+           let uiImage = UIImage(contentsOfFile: pathCacheImage.path) {
+            return uiImage
+        }
+        return nil
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -20,10 +30,10 @@ struct BreedDetailView: View {
                 BackgroundView()
                 
                 VStack {
-                        if let _ = breed.referenceImageID,
-                           let imageData = breed.imageData,
-                           let uiImage = UIImage(data: imageData) {
-                            Image(uiImage: uiImage)
+                    ZStack {
+
+                        if let cached = cachedImage {
+                            Image(uiImage: cached)
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
@@ -35,13 +45,30 @@ struct BreedDetailView: View {
                                 .background(Color.gray)
                                 .edgesIgnoringSafeArea([.top])
                         }
+                        
+                        LinksBreedsDetailView(breed: breed)
 
+                        VStack{
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.gray)
+                                .frame(width: 50, height: 5)
+                                .padding(5)
+                                .onTapGesture {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+
+                            Spacer()
+                        }
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
+                    
                     ScrollView(.vertical, showsIndicators: false) {
                         
                         VStack(alignment: .leading, spacing: 10) {
                             Text(breed.name)
-                                .font(.title)
+                                .font(.largeTitle)
                                 .fontWeight(.bold)
+                                .padding(.top)
                             
                             Text("Origine : \(breed.origin)")
                                 .font(.subheadline)
@@ -54,6 +81,9 @@ struct BreedDetailView: View {
                             
                             Text("Poids moyen : \(breed.weight.metric) kg")
                                 .font(.subheadline)
+                            
+                            
+                            
                             
                             Text("Description")
                                 .font(.headline)
@@ -80,11 +110,13 @@ struct BreedDetailView: View {
                             
                             
                         }
-                        .padding()
+                        .padding(.horizontal)
+                        
                     }
+                    .padding(.vertical, -8)
                 }
                 .foregroundColor(.white)
-
+                
             }
         }
     }

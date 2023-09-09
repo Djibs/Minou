@@ -29,7 +29,6 @@ struct CatsBreed: Identifiable, Codable, Comparable {
     let hypoallergenic: Int
     let referenceImageID: String?
     let catFriendly, bidability: Int?
-    var imageData: Data?
 
     enum CodingKeys: String, CodingKey {
         case weight, id, name
@@ -62,7 +61,6 @@ struct CatsBreed: Identifiable, Codable, Comparable {
         case referenceImageID = "reference_image_id"
         case catFriendly = "cat_friendly"
         case bidability
-        case imageData
     }
 
     public static func < (lhs: CatsBreed, rhs: CatsBreed) -> Bool {

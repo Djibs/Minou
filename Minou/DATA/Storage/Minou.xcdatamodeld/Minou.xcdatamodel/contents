@@ -19,7 +19,6 @@
         <attribute name="healthIssues" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="hypoallergenic" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="String"/>
-        <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="indoor" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="intelligence" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="lap" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

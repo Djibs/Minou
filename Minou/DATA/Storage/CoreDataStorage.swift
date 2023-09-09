@@ -80,13 +80,6 @@ class CoreDataStorage {
         Logger.coreData.info("\(updatedBreedsCount) races mise(s) à jour")
     }
 
-    func storeImageDataToCoreData(breedId: String, imageData: Data) {
-        if let existingBreed = fetchCDbreeds(withId: breedId) {
-            existingBreed.imageData = imageData
-            saveData()
-        }
-    }
-
 
     // MARK: - Private
 
@@ -225,7 +218,7 @@ extension CatsBreed {
         self.wikipediaURL = coreDataObject.wikipediaURL
         self.referenceImageID = coreDataObject.referenceImageID
 
-        
+        // Pour les champs de type Weight
         self.weight = Weight(
             imperial: coreDataObject.weightImperial!,
             metric: coreDataObject.weightMetric!
@@ -234,6 +227,5 @@ extension CatsBreed {
         // Initialisation des Int?
         self.lap = Int(coreDataObject.lap)
 
-        self.imageData = coreDataObject.imageData
     }
 }

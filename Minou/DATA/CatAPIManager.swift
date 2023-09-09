@@ -9,23 +9,19 @@ import Foundation
 import OSLog
 import SwiftUI
 
-
-
 final class CatAPIManager: ObservableObject {
 
-
-    @ObservedObject var networkMonitor: NetworkMonitor
+    var networkMonitor: NetworkMonitor
 
     let baseURL = "https://api.thecatapi.com/v1"
     let baseURLImage = "https://cdn2.thecatapi.com/images"
-
 
     let storage = CoreDataStorage()
 
     @Published var breeds: [CatsBreed] = []
     @Published var isLoading = true
 
-    init(networkMonitor: NetworkMonitor = NetworkMonitor()) {
+    init(networkMonitor: NetworkMonitor) {
         self.networkMonitor = networkMonitor
 
         fetchBreeds()
@@ -136,30 +132,19 @@ final class CatAPIManager: ObservableObject {
 
         }
     }
-
-    func getUrlImage(id: String) -> URL{
-        let url = URL(string: "\(baseURLImage)/\(id).jpg")!
-        return url
+    func getStringUrlImage(id: String) -> String{
+        return baseURLImage + "/" + id + ".jpg"
     }
 
-    func downloadAndStoreImage(breedId: String, imageId: String) {
-        //Si la fonction est appelée, c'est que l'image n'est pas en cache dans coredata
-
-        // Vérifier la connexion réseau
-        guard networkMonitor.isConnected else { return}
-
-        let imageUrl = getUrlImage(id: imageId)
-        URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in
-            if let data = data {
-                // Stocker l'image dans CoreData
-                self.storage.storeImageDataToCoreData(breedId: breedId, imageData: data)
-            }
-        }.resume()
+    func getUrlImage(id: String) -> URL?{
+        if let url = URL(string:  getStringUrlImage(id: id)) {
+            return url
+        }
+        return nil
     }
 
+    // MARK: - Private
 
-
-    // Mark: - Private
 
     private func addNewBreed(breedsList: [CatsBreed]) {
         storage.addNewBreedInCoreData(breeds: breedsList)

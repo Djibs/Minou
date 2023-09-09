@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct MinouApp: App {
-    @StateObject var catAPIManager = CatAPIManager()
+
+    @StateObject var networkMonitor = NetworkMonitor()
 
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
-                .environmentObject(catAPIManager)
+                .environmentObject(CatAPIManager(networkMonitor: networkMonitor))
+                .environmentObject(networkMonitor)
+                .environmentObject(CacheImages(networkMonitor: networkMonitor))
         }
     }
 }

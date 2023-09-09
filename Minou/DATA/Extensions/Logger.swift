@@ -16,4 +16,6 @@ extension Logger {
     static let catAPIManager = Logger(subsystem: subsystem, category: "CatAPIManager")
 
     static let coreData = Logger(subsystem: subsystem, category: "CoreDataStorage")
+
+    static let cacheImages = Logger(subsystem: subsystem, category: "CacheImages")
 }
