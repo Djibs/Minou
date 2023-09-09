@@ -1,13 +1,14 @@
 # Miaou
 
-Application test realisée en **5h35**  (+30 mn améliorations)
+Application test realisée en **5h35**  (+30 mn améliorations) (+40 mn  ajout caroussel)
 
 ## Fonctions de l'application
 
 - Affichage de la liste des races des chats récupérées depuis un API
-- Informations la race selectionnée
+- Informations sur la race selectionnée
 - Fonction de recherche d'une race
 - Support du mode hors-ligne (images et données)
+- Carroussel d'images dans la fiche de la race selctionnée
 
 ## Technologies Utilisées
 
