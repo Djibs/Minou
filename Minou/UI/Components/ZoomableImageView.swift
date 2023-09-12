@@ -41,33 +41,37 @@ struct ZoomableImageView: UIViewRepresentable {
         // Chargement de l'image depuis le cache
         if let pathCacheImage = cacheImages.imageUrlIfExists(name: imageId),
            let image = UIImage(contentsOfFile: pathCacheImage.path) {
-                        imageView.image = image
-                        let screenSize = UIScreen.main.bounds.size
-                        let screenWidth = screenSize.width
-                        let screenHeight = screenSize.height
-                        let maxHeight: CGFloat = 250
+            imageView.image = image
+            DispatchQueue.main.async { // corrige le probleme de l'image qui ne ce centre plus
+                let screenSize = UIScreen.main.bounds.size
+                let screenWidth = screenSize.width
+                let screenHeight = screenSize.height
+                let maxHeight: CGFloat = 250
 
-                        let newScale: CGFloat = .minimum(.maximum(scale, 1), 4)
+                let newScale: CGFloat = .minimum(.maximum(scale, 1), 4)
 
-                        let imageSize = image.size
-                        let originalScale = imageSize.width / imageSize.height >= screenWidth / screenHeight ?
-                        screenWidth / imageSize.width :
-                        screenHeight / imageSize.height
+                let imageSize = image.size
+                let originalScale = imageSize.width / imageSize.height >= screenWidth / screenHeight ?
+                screenWidth / imageSize.width :
+                screenHeight / imageSize.height
 
-                        let imageWidth = (imageSize.width * originalScale) * newScale
-                        let imageHeight = (imageSize.height * originalScale) * newScale
+                let imageWidth = (imageSize.width * originalScale) * newScale
+                let imageHeight = (imageSize.height * originalScale) * newScale
 
-                        let widthRatio = screenWidth / imageWidth
-                        let heightRatio = screenHeight / imageHeight
+                let widthRatio = screenWidth / imageWidth
+                let heightRatio = screenHeight / imageHeight
 
-                        let maxRatio = min(widthRatio, heightRatio, maxHeight / imageHeight)
-                        scrollView.minimumZoomScale = maxRatio
-                        scrollView.zoomScale = maxRatio
+                let maxRatio = min(widthRatio, heightRatio, maxHeight / imageHeight)
+                scrollView.minimumZoomScale = maxRatio
+                scrollView.zoomScale = maxRatio
 
-                        context.coordinator.updateContentInset(scrollView: scrollView)
-                } else {
-                    Logger.viewCycle.error("Erreur de chargement de l'image pour le zoom")
-                }
+                context.coordinator.updateContentInset(scrollView: scrollView) // Stocke une référence à imageView dans le coordinateur
+
+            }
+
+        } else {
+            Logger.viewCycle.error("Erreur de chargement de l'image pour le zoom")
+        }
 
         return scrollView
     }
