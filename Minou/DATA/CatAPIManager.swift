@@ -167,7 +167,7 @@ final class CatAPIManager: ObservableObject {
 
             do {
                 let catImages = try JSONDecoder().decode([SearchImages].self, from: imagesListJsonData)
-                var fetchedIDs = catImages.map { $0.id }
+                let fetchedIDs = catImages.map { $0.id }
                 let joinedIDs = fetchedIDs.joined(separator: ",") // on crée un seul string qui sépare les ids par une virgule
 
                 // on stocke dans coredata...

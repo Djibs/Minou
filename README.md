@@ -1,6 +1,6 @@
 # Miaou
 
-Application test realisée en **5h35**  (+30 mn améliorations) (+40 mn  ajout caroussel)
+Application test realisée en **5h35**  (+1h20 améliorations)
 
 ## Fonctions de l'application
 
@@ -8,7 +8,8 @@ Application test realisée en **5h35**  (+30 mn améliorations) (+40 mn  ajout c
 - Informations sur la race selectionnée
 - Fonction de recherche d'une race
 - Support du mode hors-ligne (images et données)
-- Carroussel d'images dans la fiche de la race selctionnée
+- Carroussel d'images dans la fiche de la race seléctionnée
+- Zoom sur les images
 
 ## Technologies Utilisées
 

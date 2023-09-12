@@ -10,7 +10,11 @@
 		496812C32AACA03A00A2C583 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 496812C22AACA03A00A2C583 /* README.md */; };
 		496812C52AACAA1200A2C583 /* LinksBreedsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */; };
 		496812C72AACAE1100A2C583 /* CacheImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C62AACAE1100A2C583 /* CacheImages.swift */; };
-		496812C92AAD1FB700A2C583 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C82AAD1FB700A2C583 /* GridView.swift */; };
+		496812C92AAD1FB700A2C583 /* ScrollImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496812C82AAD1FB700A2C583 /* ScrollImagesView.swift */; };
+		49683E002AB057A100D50A6B /* ZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49683DFF2AB057A100D50A6B /* ZoomView.swift */; };
+		49683E022AB057BB00D50A6B /* ZoomableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49683E012AB057BB00D50A6B /* ZoomableImageView.swift */; };
+		49683E042AB05E5100D50A6B /* ButtonCloseSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49683E032AB05E5100D50A6B /* ButtonCloseSheetView.swift */; };
+		49683E062AB05F2D00D50A6B /* headerImageBreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49683E052AB05F2D00D50A6B /* headerImageBreedDetailView.swift */; };
 		49C8E8E82AA7A0A1007A42E9 /* MinouApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */; };
 		49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8E8E92AA7A0A1007A42E9 /* ListView.swift */; };
 		49C8E8EC2AA7A0A2007A42E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49C8E8EB2AA7A0A2007A42E9 /* Assets.xcassets */; };
@@ -55,7 +59,11 @@
 		496812C22AACA03A00A2C583 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksBreedsDetailView.swift; sourceTree = "<group>"; };
 		496812C62AACAE1100A2C583 /* CacheImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImages.swift; sourceTree = "<group>"; };
-		496812C82AAD1FB700A2C583 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		496812C82AAD1FB700A2C583 /* ScrollImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollImagesView.swift; sourceTree = "<group>"; };
+		49683DFF2AB057A100D50A6B /* ZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomView.swift; sourceTree = "<group>"; };
+		49683E012AB057BB00D50A6B /* ZoomableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageView.swift; sourceTree = "<group>"; };
+		49683E032AB05E5100D50A6B /* ButtonCloseSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCloseSheetView.swift; sourceTree = "<group>"; };
+		49683E052AB05F2D00D50A6B /* headerImageBreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerImageBreedDetailView.swift; sourceTree = "<group>"; };
 		49C8E8E42AA7A0A1007A42E9 /* Minou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C8E8E72AA7A0A1007A42E9 /* MinouApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinouApp.swift; sourceTree = "<group>"; };
 		49C8E8E92AA7A0A1007A42E9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -213,10 +221,14 @@
 				49C8E9232AA7D109007A42E9 /* SearchBarView.swift */,
 				49C8E92E2AA7E484007A42E9 /* RatingView.swift */,
 				49C8E9212AA7C56D007A42E9 /* BreedImageView.swift */,
+				49683E052AB05F2D00D50A6B /* headerImageBreedDetailView.swift */,
 				49C8E9252AA7D163007A42E9 /* BlurView.swift */,
 				49C8E9272AA7D26A007A42E9 /* BackgroundView.swift */,
 				496812C42AACAA1200A2C583 /* LinksBreedsDetailView.swift */,
-				496812C82AAD1FB700A2C583 /* GridView.swift */,
+				49683E032AB05E5100D50A6B /* ButtonCloseSheetView.swift */,
+				496812C82AAD1FB700A2C583 /* ScrollImagesView.swift */,
+				49683DFF2AB057A100D50A6B /* ZoomView.swift */,
+				49683E012AB057BB00D50A6B /* ZoomableImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -352,16 +364,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496812C92AAD1FB700A2C583 /* GridView.swift in Sources */,
+				496812C92AAD1FB700A2C583 /* ScrollImagesView.swift in Sources */,
+				49683E042AB05E5100D50A6B /* ButtonCloseSheetView.swift in Sources */,
 				49C8E8F12AA7A0A2007A42E9 /* CoreDataStorage.swift in Sources */,
 				49C8E9332AA7ECD1007A42E9 /* NetworkMonitor.swift in Sources */,
 				49C8E9242AA7D109007A42E9 /* SearchBarView.swift in Sources */,
 				49C8E9312AA7E7AF007A42E9 /* SplashScreenView.swift in Sources */,
+				49683E002AB057A100D50A6B /* ZoomView.swift in Sources */,
 				49C8E9282AA7D26A007A42E9 /* BackgroundView.swift in Sources */,
 				49C8E8EA2AA7A0A1007A42E9 /* ListView.swift in Sources */,
 				496812C72AACAE1100A2C583 /* CacheImages.swift in Sources */,
 				49C8E92B2AA7DA9F007A42E9 /* BreedDetailView.swift in Sources */,
 				49C8E91A2AA7A13F007A42E9 /* CatAPIManager.swift in Sources */,
+				49683E062AB05F2D00D50A6B /* headerImageBreedDetailView.swift in Sources */,
+				49683E022AB057BB00D50A6B /* ZoomableImageView.swift in Sources */,
 				49C8E91C2AA7A153007A42E9 /* CatsBreed.swift in Sources */,
 				49C8E9202AA7B442007A42E9 /* Logger.swift in Sources */,
 				49C8E8F42AA7A0A2007A42E9 /* Minou.xcdatamodeld in Sources */,

@@ -29,7 +29,6 @@ struct ListView: View {
 
                     List {
                         ForEach(catAPIManager.breeds) { breed in
-                            //NavigationLink {
 
                             // Si recherche désactivée on affiche toute la liste OU cherche par nom
                             if searchText.isEmpty || (breed.name.lowercased().contains(searchText.lowercased())) {

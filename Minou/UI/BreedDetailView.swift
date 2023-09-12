@@ -9,23 +9,14 @@ import SwiftUI
 
 struct BreedDetailView: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var cacheImages: CacheImages
     @EnvironmentObject var catAPIManager: CatAPIManager
 
     @State private var imageIds: [String] = []
+    @State var idImageZoom: String?
+    @State var openZoomView: Bool = false
 
     let breed: CatsBreed
-    
-    var cachedImage: UIImage? {
-        
-        if let imageId = breed.referenceImageID, let pathCacheImage = cacheImages.imageUrlIfExists(name: imageId),
-           let uiImage = UIImage(contentsOfFile: pathCacheImage.path) {
-            return uiImage
-        }
-        return nil
-    }
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -35,33 +26,12 @@ struct BreedDetailView: View {
                 VStack {
                     ZStack {
 
-                        if let cached = cachedImage {
-                            Image(uiImage: cached)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
-                                .clipped()
-                                .edgesIgnoringSafeArea([.vertical])
-                        } else {
-                            Text("Image non disponible")
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
-                                .background(Color.gray)
-                                .edgesIgnoringSafeArea([.top])
-                        }
+                        headerImageBreedDetailView(breedId: breed.referenceImageID, geometryWidth: geometry.size.width, geometryHeight: geometry.size.height)
 
                         LinksBreedsDetailView(breed: breed)
 
-                        VStack{
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(Color.gray)
-                                .frame(width: 50, height: 5)
-                                .padding(5)
-                                .onTapGesture {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
+                        ButtonCloseSheetView()
 
-                            Spacer()
-                        }
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height * 0.4)
                     
@@ -118,7 +88,7 @@ struct BreedDetailView: View {
                             }
                             Group{
                                 if !imageIds.isEmpty {
-                                    ScrollImagesView(imagesIds: imageIds)
+                                    ScrollImagesView(idImageZoom: $idImageZoom, openZoomView: $openZoomView, imagesIds: imageIds)
                                 }
                             }
                             .padding(.vertical)
@@ -130,6 +100,10 @@ struct BreedDetailView: View {
                     .padding(.vertical, -8)
                 }
                 .foregroundColor(.white)
+
+                if openZoomView, let id = idImageZoom {
+                    ZoomView(imageId: id, openZoomView: $openZoomView)
+                }
                 
             }
         }
