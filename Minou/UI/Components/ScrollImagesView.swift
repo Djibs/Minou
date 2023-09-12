@@ -62,7 +62,6 @@ struct ScrollImagesView: View {
                         withAnimation(){
                             openZoomView = true
                         }
-                        print("image Zoom \(imageId)")
                     }
                     
                 }
