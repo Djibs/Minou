@@ -137,7 +137,7 @@ class CoreDataStorage {
 
     func fetchImagesIds(breedId: String)-> String? {
         let fetchRequest: NSFetchRequest<CDbreeds> = CDbreeds.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "breedId == %@", breedId)
+        fetchRequest.predicate = NSPredicate(format: "id == %@", breedId)
 
         do {
             if let result = try context.fetch(fetchRequest).first {

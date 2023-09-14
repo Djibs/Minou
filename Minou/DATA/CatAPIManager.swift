@@ -40,6 +40,7 @@ final class CatAPIManager: ObservableObject {
         guard networkMonitor.isConnected else {
             // Récupérer les données depuis Coredata si pas de connexion
             self.breeds = self.storage.fetchBreedsList().sorted()
+            self.isLoading = false
             return
         }
 
